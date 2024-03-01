@@ -16,6 +16,7 @@ import java.util.concurrent.TimeUnit;
 @Configuration
 public class ThreadPoolExecutorConfig {
 
+    //todo 这里可以设置从配置文件中去读取线程池核心参数
     @Bean
     public ThreadPoolExecutor threadPoolExecutor() {
         ThreadFactory threadFactory = new ThreadFactory() {

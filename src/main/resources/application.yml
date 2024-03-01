@@ -111,5 +111,6 @@ yuapi:
 
 model:
   modelName: Qwen
+  modelId : 1731935331051589633
 
 

@@ -2,17 +2,22 @@ package com.my.springbootinit.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.my.springbootinit.common.BaseResponse;
+import com.my.springbootinit.config.StrategySelector;
 import com.my.springbootinit.constant.CommonConstant;
 import com.my.springbootinit.mapper.ChartMapper;
+import com.my.springbootinit.model.dto.ServerLoadInfo;
 import com.my.springbootinit.model.dto.chart.ChartQueryRequest;
 import com.my.springbootinit.model.entity.Chart;
 import com.my.springbootinit.model.entity.ChartForMongo;
 import com.my.springbootinit.repository.ChartRepository;
 import com.my.springbootinit.service.ChartService;
+import com.my.springbootinit.service.GenerateChartStrategy;
 import com.my.springbootinit.service.UserService;
 import com.my.springbootinit.utils.SqlUtils;
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.data.domain.*;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
@@ -40,6 +45,12 @@ public class ChartServiceImpl extends ServiceImpl<ChartMapper, Chart>
 
     @Resource
     private ChartRepository chartRepository;
+
+    @Lazy
+    @Resource
+    private StrategySelector strategySelector;
+
+
 
     /**
      * 获取查询包装类
@@ -106,6 +117,13 @@ public class ChartServiceImpl extends ServiceImpl<ChartMapper, Chart>
     public boolean saveDocument(ChartForMongo chartForMongo) {
         ChartForMongo save = chartRepository.save(chartForMongo);
         return true;
+    }
+
+    @Override
+    public BaseResponse genChart(Chart chart, ServerLoadInfo info) {
+
+        GenerateChartStrategy generateChartStrategy = strategySelector.selectStrategy(info);
+        return generateChartStrategy.executeGenChart(chart);
     }
 
 }

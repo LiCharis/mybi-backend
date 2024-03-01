@@ -29,6 +29,7 @@ public class ChartUtils {
 
     /**
      * 处理拼接输入
+     *
      * @param chart
      * @return
      */
@@ -52,16 +53,16 @@ public class ChartUtils {
     /**
      * 选择分析图表的模型
      */
-    public static String getModelResponse(String modelName,String userInput){
+    public static String getModelResponse(String modelName, String userInput) {
         String response = null;
         String url = null;
-        if (modelName.equals("ChatGPT")){
-           url = "http://101.43.233.52:8000/api/task/chartByGPT";
-        }else if (modelName.equals("Qwen")){
+        if (modelName.equals("ChatGPT")) {
+            url = "http://101.43.233.52:8000/api/task/chartByGPT";
+        } else if (modelName.equals("Qwen")) {
             url = "http://101.43.233.52:8000/api/task/chartByQwen";
         }
         HttpResponse httpResponse = HttpRequest.post(url)
-                .form("input",userInput)
+                .form("input", userInput)
                 .execute();
         response = httpResponse.body();
         return response;

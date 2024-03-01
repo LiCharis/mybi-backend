@@ -23,7 +23,7 @@
             resultType="com.my.springbootinit.model.entity.Post">
         select p.*
         from post p
-                 join (select postId from post_favour where userId = #{favourUserId}) pf
+                 join (select postId from post_favour where userId = 【{favourUserId}) pf
                       on p.id = pf.postId ${ew.customSqlSegment}
     </select>
 </mapper>

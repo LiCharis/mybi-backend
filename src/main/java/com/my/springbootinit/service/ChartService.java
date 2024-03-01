@@ -3,6 +3,8 @@ package com.my.springbootinit.service;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.my.springbootinit.common.BaseResponse;
+import com.my.springbootinit.model.dto.ServerLoadInfo;
 import com.my.springbootinit.model.dto.chart.ChartQueryRequest;
 import com.my.springbootinit.model.dto.post.PostQueryRequest;
 import com.my.springbootinit.model.entity.Chart;
@@ -39,5 +41,14 @@ public interface ChartService extends IService<Chart> {
      * @return
      */
    boolean saveDocument(ChartForMongo chartForMongo);
+
+
+    /**
+     * 通过AI生成图表
+     * @param chart
+     * @param info
+     * @return
+     */
+    BaseResponse genChart(Chart chart, ServerLoadInfo info);
 
 }

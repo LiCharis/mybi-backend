@@ -1,4 +1,4 @@
-# SpringBoot 项目初始模板
+【 SpringBoot 项目初始模板
 
 > 作者：[程序员鱼皮](https://github.com/liyupi)
 > 仅分享于 [编程导航知识星球](https://yupi.icu)
@@ -9,9 +9,9 @@
 
 [toc]
 
-## 模板特点
+【【 模板特点
 
-### 主流框架 & 特性
+【【【 主流框架 & 特性
 
 - Spring Boot 2.7.x（贼新）
 - Spring MVC
@@ -21,14 +21,14 @@
 - Spring Scheduler 定时任务
 - Spring 事务注解
 
-### 数据存储
+【【【 数据存储
 
 - MySQL 数据库
 - Redis 内存数据库
 - Elasticsearch 搜索引擎
 - 腾讯云 COS 对象存储
 
-### 工具类
+【【【 工具类
 
 - Easy Excel 表格处理
 - Hutool 工具库
@@ -36,7 +36,7 @@
 - Apache Commons Lang3 工具类
 - Lombok 注解
 
-### 业务特性
+【【【 业务特性
 
 - Spring Session Redis 分布式登录
 - 全局请求响应拦截器（记录日志）
@@ -50,7 +50,7 @@
 - 多环境配置
 
 
-## 业务功能
+【【 业务功能
 
 - 提供示例 SQL（用户、帖子、帖子点赞、帖子收藏表）
 - 用户登录、注册、注销、更新、检索、权限管理
@@ -62,21 +62,21 @@
 - 支持微信公众号订阅、收发消息、设置菜单
 - 支持分业务的文件上传
 
-### 单元测试
+【【【 单元测试
 
 - JUnit5 单元测试
 - 示例单元测试类
 
-### 架构设计
+【【【 架构设计
 
 - 合理分层
 
 
-## 快速上手
+【【 快速上手
 
 > 所有需要修改的地方鱼皮都标记了 `todo`，便于大家找到修改的位置~
 
-### MySQL 数据库
+【【【 MySQL 数据库
 
 1）修改 `application.yml` 的数据库配置为你自己的：
 
@@ -95,7 +95,7 @@ spring:
 
 ![](doc/swagger.png)
 
-### Redis 分布式登录
+【【【 Redis 分布式登录
 
 1）修改 `application.yml` 的 Redis 配置为你自己的：
 
@@ -132,7 +132,7 @@ spring:
 @SpringBootApplication
 ```
 
-### Elasticsearch 搜索引擎
+【【【 Elasticsearch 搜索引擎
 
 1）修改 `application.yml` 的 Elasticsearch 配置为你自己的：
 

@@ -28,5 +28,11 @@ public class GenChartByAiRequest implements Serializable {
      */
     private String chartType;
 
+
+    /**
+     * 执行策略
+     */
+    private String strategy;
+
     private static final long serialVersionUID = 1L;
 }
