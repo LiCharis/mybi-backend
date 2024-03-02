@@ -12,7 +12,6 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 /**
  * 主类（项目启动入口）
  */
-// todo 如需开启 Redis，须移除 exclude 中的内容
 @SpringBootApplication
 @MapperScan("com.my.springbootinit.mapper")
 @EnableScheduling
